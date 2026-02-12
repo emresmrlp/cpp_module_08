@@ -6,7 +6,7 @@
 /*   By: ysumeral <ysumeral@student.42istanbul.com. +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 17:03:10 by ysumeral          #+#    #+#             */
-/*   Updated: 2026/02/12 12:22:39 by ysumeral         ###   ########.fr       */
+/*   Updated: 2026/02/12 12:55:39 by ysumeral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ class Span
 		Span(const Span&);
 		Span &operator=(const Span &);
 		~Span();
-		void addNumber(int value);
-		void addNumber(std::vector<int>::iterator begin,
-			std::vector<int>::iterator end);
+		void addNumber(int);
+		void addNumber(std::vector<int>::iterator,
+			std::vector<int>::iterator);
 		unsigned int shortestSpan();
 		unsigned int longestSpan();
 		class OutOfRangeException : public std::exception
@@ -40,7 +40,7 @@ class Span
 			public:
 				const char *what() const throw();
 		};
-		class NotEnoughtParamException : public std::exception
+		class NotEnoughParamException : public std::exception
 		{
 			public:
 				const char *what() const throw();

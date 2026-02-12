@@ -6,7 +6,7 @@
 /*   By: ysumeral <ysumeral@student.42istanbul.com. +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 17:03:01 by ysumeral          #+#    #+#             */
-/*   Updated: 2026/02/12 12:22:44 by ysumeral         ###   ########.fr       */
+/*   Updated: 2026/02/12 12:26:01 by ysumeral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ const char *Span::OutOfRangeException::what() const throw()
 	return "Error: Out of range on span!";
 };
 
-const char *Span::NotEnoughtParamException::what() const throw()
+const char *Span::NotEnoughParamException::what() const throw()
 {
 	return "Error: Not enought param for span!";
 };
@@ -65,7 +65,7 @@ unsigned int	Span::shortestSpan()
 	unsigned int	value;
 
 	if (this->_numbers.size() < 2)
-		throw NotEnoughtParamException();
+		throw NotEnoughParamException();
 	value = 0;
 	std::vector<int> copyNumbers(this->_numbers);
 	std::sort(copyNumbers.begin(), copyNumbers.end());
@@ -85,7 +85,7 @@ unsigned int	Span::longestSpan()
 	unsigned int	value;
 
 	if (this->_numbers.size() < 2)
-		throw NotEnoughtParamException();
+		throw NotEnoughParamException();
 	value = 0;
 	std::vector<int> copyNumbers(this->_numbers);
 	std::sort(copyNumbers.begin(), copyNumbers.end());

@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ysumeral <ysumeral@student.42istanbul.com. +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/02/12 12:28:05 by ysumeral          #+#    #+#              #
-#    Updated: 2026/02/12 12:28:07 by ysumeral         ###   ########.fr        #
+#    Created: 2026/02/12 12:28:14 by ysumeral          #+#    #+#              #
+#    Updated: 2026/02/12 12:28:56 by ysumeral         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX 		=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRC			=	src/main.cpp \
-				src/Span.cpp
+				src/MutantStack.cpp
 OBJ			=	$(SRC:.cpp=.o)
-NAME		=	span
+NAME		=	mutatedAbomination
 
 all: $(NAME)
 
