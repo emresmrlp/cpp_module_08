@@ -6,11 +6,13 @@
 /*   By: ysumeral <ysumeral@student.42istanbul.com. +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 12:34:07 by ysumeral          #+#    #+#             */
-/*   Updated: 2026/02/13 10:08:58 by ysumeral         ###   ########.fr       */
+/*   Updated: 2026/02/13 10:45:44 by ysumeral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+#include <iostream>
+#include <list>
 
 int main()
 {
