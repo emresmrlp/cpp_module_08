@@ -6,14 +6,14 @@
 #    By: ysumeral <ysumeral@student.42istanbul.com. +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/12 12:28:05 by ysumeral          #+#    #+#              #
-#    Updated: 2026/02/12 12:28:07 by ysumeral         ###   ########.fr        #
+#    Updated: 2026/02/13 10:06:01 by ysumeral         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX 		=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
-SRC			=	src/main.cpp \
-				src/Span.cpp
+SRC			=	main.cpp \
+				Span.cpp
 OBJ			=	$(SRC:.cpp=.o)
 NAME		=	span
 

@@ -6,18 +6,15 @@
 /*   By: ysumeral <ysumeral@student.42istanbul.com. +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 17:03:10 by ysumeral          #+#    #+#             */
-/*   Updated: 2026/02/12 12:55:39 by ysumeral         ###   ########.fr       */
+/*   Updated: 2026/02/13 10:25:09 by ysumeral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 # define SPAN_HPP
-# include <iostream>
 # include <vector>
 # include <exception>
-# include <algorithm>
-# include <ctime>
-# include <cmath>
+# include <iterator>
 
 class Span
 {
@@ -30,9 +27,17 @@ class Span
 		Span(const Span&);
 		Span &operator=(const Span &);
 		~Span();
-		void addNumber(int);
-		void addNumber(std::vector<int>::iterator,
-			std::vector<int>::iterator);
+		void	addNumber(int);
+		template <typename Iterator>
+		void	addNumber(Iterator begin, Iterator end)
+		{
+			unsigned int dist;
+
+			dist = std::distance(begin, end);
+			if (this->_numbers.size() + dist > this->_N)
+				throw OutOfRangeException();
+			_numbers.insert(_numbers.end(), begin, end);
+		}
 		unsigned int shortestSpan();
 		unsigned int longestSpan();
 		class OutOfRangeException : public std::exception

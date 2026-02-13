@@ -6,14 +6,13 @@
 #    By: ysumeral <ysumeral@student.42istanbul.com. +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/12 12:28:14 by ysumeral          #+#    #+#              #
-#    Updated: 2026/02/12 12:28:56 by ysumeral         ###   ########.fr        #
+#    Updated: 2026/02/13 10:20:51 by ysumeral         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX 		=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
-SRC			=	src/main.cpp \
-				src/MutantStack.cpp
+SRC			=	main.cpp
 OBJ			=	$(SRC:.cpp=.o)
 NAME		=	mutatedAbomination
 

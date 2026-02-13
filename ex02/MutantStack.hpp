@@ -6,14 +6,15 @@
 /*   By: ysumeral <ysumeral@student.42istanbul.com. +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 12:29:26 by ysumeral          #+#    #+#             */
-/*   Updated: 2026/02/12 14:00:51 by ysumeral         ###   ########.fr       */
+/*   Updated: 2026/02/13 10:08:47 by ysumeral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MUTANTSTACK_HPP
 # define MUTANTSTACK_HPP
 # include <stack>
-# include <deque>
+# include <iostream>
+# include <list>
 
 template <typename T>
 class MutantStack : public std::stack<T>

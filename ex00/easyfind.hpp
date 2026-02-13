@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.tpp                                       :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysumeral <ysumeral@student.42istanbul.com. +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/05 14:26:19 by ysumeral          #+#    #+#             */
-/*   Updated: 2026/02/06 16:57:46 by ysumeral         ###   ########.fr       */
+/*   Created: 2026/02/05 14:26:20 by ysumeral          #+#    #+#             */
+/*   Updated: 2026/02/13 10:05:36 by ysumeral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-template <typename T>
-typename T::iterator easyfind(T &type, int value)
-{
-    return (std::find(type.begin(), type.end(), value));
-}
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
+# include <algorithm>
+# include <iostream>
+# include <string>
+# include <vector>
+# include <stdexcept>
+# include <cstdlib>
 
 template <typename T>
-typename T::const_iterator easyfind(const T &type, int value)
-{
-    return (std::find(type.begin(), type.end(), value));
-}
+typename T::iterator easyfind(T &type, int value);
+
+template <typename T>
+typename T::const_iterator easyfind(const T &type, int value);
+
+# include "easyfind.tpp"
+
+#endif

@@ -6,11 +6,12 @@
 /*   By: ysumeral <ysumeral@student.42istanbul.com. +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 17:03:01 by ysumeral          #+#    #+#             */
-/*   Updated: 2026/02/12 12:26:01 by ysumeral         ###   ########.fr       */
+/*   Updated: 2026/02/13 10:25:24 by ysumeral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Span.hpp"
+#include "Span.hpp"
+#include <algorithm>
 
 Span::Span() : _N(0) {}
 
@@ -23,8 +24,11 @@ Span::Span(const Span &ref)
 
 Span	&Span::operator=(const Span &ref)
 {
-	if (this == &ref)
+	if (this != &ref)
+	{
 		_N = ref._N;
+		_numbers = ref._numbers;
+	}
 	return (*this);
 }
 
@@ -35,18 +39,6 @@ void	Span::addNumber(int value)
 	if (this->_numbers.size() >= this->_N)
 		throw OutOfRangeException();
 	this->_numbers.push_back(value);
-}
-
-void	Span::addNumber(std::vector<int>::iterator begin,
-			std::vector<int>::iterator end)
-{
-	if (this->_numbers.size() >= this->_N)
-		throw OutOfRangeException();
-	while (begin < end)
-	{
-		this->addNumber(*begin);
-		begin++;
-	}
 }
 
 const char *Span::OutOfRangeException::what() const throw()
@@ -82,11 +74,9 @@ unsigned int	Span::shortestSpan()
 unsigned int	Span::longestSpan()
 {
 	unsigned int	result;
-	unsigned int	value;
 
 	if (this->_numbers.size() < 2)
 		throw NotEnoughParamException();
-	value = 0;
 	std::vector<int> copyNumbers(this->_numbers);
 	std::sort(copyNumbers.begin(), copyNumbers.end());
 	result = static_cast<unsigned int>(copyNumbers[copyNumbers.size() - 1] - copyNumbers[0]); 

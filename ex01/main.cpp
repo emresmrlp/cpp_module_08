@@ -6,11 +6,15 @@
 /*   By: ysumeral <ysumeral@student.42istanbul.com. +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 17:03:17 by ysumeral          #+#    #+#             */
-/*   Updated: 2026/02/12 12:24:54 by ysumeral         ###   ########.fr       */
+/*   Updated: 2026/02/13 10:25:40 by ysumeral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Span.hpp"
+#include "Span.hpp"
+#include <iostream>
+#include <ctime>
+#include <cmath>
+#include <cstdlib>
 
 int main()
 {
@@ -30,7 +34,7 @@ int main()
 		std::srand(std::time(NULL));
 		Span spBig(11000);
 		for (int i = 0; i < 11000; ++i)
-			spBig.addNumber(rand());
+			spBig.addNumber(std::rand());
 		std::cout << spBig.shortestSpan() << std::endl;
 		std::cout << spBig.longestSpan() << std::endl;
 
